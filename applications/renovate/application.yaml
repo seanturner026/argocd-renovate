@@ -20,7 +20,7 @@ spec:
               "platform": "github",
               "repositories": ["seanturner026/argocd-renovate"]
             }
-          existingSecret: renovate
+        existingSecret: renovate
   destination:
     server: https://kubernetes.default.svc
     namespace: renovate
