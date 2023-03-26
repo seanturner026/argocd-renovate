@@ -1,0 +1,30 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: renovate
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://docs.renovatebot.com/helm-charts
+    targetRevision: 35.22.1
+    chart: renovate
+    helm:
+      values: |
+        apiVersionOverrides:
+          cronjob: batch/v1
+
+        renovate:
+          config: |
+            {
+              "platform": "github",
+              "repositories": ["seanturner026/argocd-renovate"]
+            }
+          existingSecret: renovate
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: renovate
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

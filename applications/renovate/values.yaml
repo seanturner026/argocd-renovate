@@ -1,0 +1,10 @@
+renovate:
+  config: |
+    {
+      "platform": "github",
+      "repositories": ["seanturner026/argocd-renovate"]
+    }
+  existingSecret: renovate
+
+apiVersionOverrides:
+  cronjob: batch/v1
