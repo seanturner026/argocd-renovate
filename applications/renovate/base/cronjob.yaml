@@ -25,7 +25,7 @@ spec:
                 - name: RENOVATE_CONFIG_FILE
                   value: "/opt/renovate/config.json"
                 - name: LOG_LEVEL
-                  value: DEBUG
+                  value: INFO # DEBUG
                 - name: RENOVATE_TOKEN
                   valueFrom:
                     secretKeyRef:
@@ -40,6 +40,6 @@ spec:
           volumes:
             - name: config-volume
               configMap:
-                name: renovate-config
+                name: renovate
             - name: work-volume
               emptyDir: {}

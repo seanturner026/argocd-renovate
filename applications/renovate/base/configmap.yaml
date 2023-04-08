@@ -3,6 +3,8 @@ kind: ConfigMap
 metadata:
   name: renovate
   namespace: renovate
+  annotations:
+    argocd.argoproj.io/sync-wave: "-1"
 data:
   config.json: |-
     {
