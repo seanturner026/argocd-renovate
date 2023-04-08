@@ -11,7 +11,7 @@ spec:
     path: applications/renovate
   destination:
     server: https://kubernetes.default.svc
-    namespace: renovate
+    namespace: argocd
   syncPolicy:
     automated:
       prune: true
