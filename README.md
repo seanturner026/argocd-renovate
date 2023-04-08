@@ -1,8 +1,12 @@
 # argocd-renovate
 
+Using Renovate to update ArgoCD Applications automatically.
+
+Example PR: https://github.com/seanturner026/argocd-renovate/pull/1
+
 ```bash
 # Create k8s cluster with Kind.
-kind create cluster --name local --config kind.yaml
+kind create cluster --name local
 
 # Install ArgoCD.
 kubectl create namespace argocd
