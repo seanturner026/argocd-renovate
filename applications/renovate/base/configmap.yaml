@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: renovate
+  namespace: renovate
+data:
+  config.json: |-
+    {
+      "repositories": ["seanturner026/argocd-renovate"]
+    }
